@@ -1,22 +1,31 @@
-import React from "react"; 
+import React from "react";
 import Link from "../link/Link";
+import { Menu, CircleX } from 'lucide-react';
+import { useState } from "react";
 
 const navLinks = [
-  { id: 1, name: "Home", url: "/" },
-  { id: 2, name: "About", url: "/about" },
-  { id: 3, name: "Blog", url: "/blog" },
-  { id: 4, name: "Projects", url: "/projects" },
-  { id: 5, name: "Contact", url: "/contact" }
+    { id: 1, name: "Home", url: "/" },
+    { id: 2, name: "About", url: "/about" },
+    { id: 3, name: "Blog", url: "/blog" },
+    { id: 4, name: "Projects", url: "/projects" },
+    { id: 5, name: "Contact", url: "/contact" }
 ];
 
 
 const Navbar = () => {
-    return(
-        <nav>
+    const [open, setOpen] = useState(false);
+
+    return (
+        <nav className="flex justify-between mx-10">
+            <span className="flex" onClick={() => setOpen(!open)}>
+                {open ? <CircleX/> : <Menu></Menu>}
+                <Menu className="md:hidden"></Menu>
+                <h3 className="ml-4">My Navbar</h3>
+            </span>
             <ul className="flex">
-            {
-                navLinks.map(route => <Link key={route.id} route={route}></Link>)
-            }
+                {
+                    navLinks.map(route => <Link key={route.id} route={route}></Link>)
+                }
             </ul>
 
             {/* <ul className="flex">
@@ -29,6 +38,8 @@ const Navbar = () => {
                 <li><a href="/about">About</a></li>
                 <li><a href="/blog">Blog</a></li>
             </ul> */}
+
+            <button>Sign In</button>
         </nav>
     );
 };
