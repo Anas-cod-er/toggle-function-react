@@ -1,0 +1,43 @@
+[
+  {
+    "id": 1,
+    "name": "Basic",
+    "price": 999,
+    "duration": "per month",
+    "description": "Best for beginners",
+    "features": [
+      "Gym access (Day time)",
+      "Free fitness assessment",
+      "Locker facility",
+      "Basic workout plan"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Standard",
+    "price": 1999,
+    "duration": "per month",
+    "description": "Ideal for regular members",
+    "features": [
+      "24/7 gym access",
+      "Personal trainer (2 sessions/month)",
+      "Cardio & strength training",
+      "Locker & shower",
+      "Diet guidance"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Premium",
+    "price": 2999,
+    "duration": "per month",
+    "description": "For serious fitness goals",
+    "features": [
+      "24/7 gym access",
+      "Unlimited personal training",
+      "Group classes (Yoga, Zumba, HIIT)",
+      "Steam & sauna",
+      "Custom diet & workout plan"
+    ]
+  }
+]

@@ -1,9 +1,11 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { Suspense } from 'react'
 import './App.css'
 import Daisynav from './component/daisy/Daisynav'
 import Navbar from './component/navbar/Navbar'
+import PricingOption from './component/pricingOptions/PricingOption'
+
+
+const pricingPromise = fetch('price.json').then(res => res.json());
 
 function App() {
 
@@ -11,10 +13,14 @@ function App() {
     <>
       <header>
         <Navbar></Navbar>
-        <Daisynav></Daisynav>
+        {/* <Daisynav></Daisynav> */}
       </header>
 
-      <main></main>
+      <main>
+        <Suspense fallback={<span className="loading loading-infinity loading-md"></span>}>
+          <PricingOption pricingPromise={pricingPromise}></PricingOption>
+        </Suspense>
+      </main>
     </>
   )
 }
